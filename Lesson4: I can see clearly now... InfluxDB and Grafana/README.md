@@ -81,7 +81,7 @@ config:
 
 ```
 
-Lambda now has dependencies added to the node_modules directory, so it's necessary to upload upload it again.
+Lambda now has dependencies added to the node_modules directory, so it's necessary to upload it again.
 Then it can run again with the newly updated script:
 
 ```sh
@@ -103,7 +103,7 @@ Log into InfluxDB at: [http://ec2-54-86-68-145.compute-1.amazonaws.com:8083/](ht
 SHOW DATABASES
 ```
 
-The `artillery_metrics` database shold be listed. In the InfluxDB dashboard, select the `artillery_metrics` database from the drop-down list. 
+The `artillery_metrics` database should be listed. In the InfluxDB dashboard, select the `artillery_metrics` database from the drop-down list in the upper-right corner.
 With that selection made, queries made will be against that database.
  
 To see the measurements stored in this database, run this command:
@@ -115,20 +115,20 @@ SHOW MEASUREMENTS
 The `latency` measurement should be in the list. To show all of the latencies, select them all:
 
 ```
-SELECT * FROM latency WHERE
+SELECT * FROM latency
 ```
 
 To see only results from a specific test, run:
  
 ```
-SELECT * FROM latency WHERE testName = 'a09y-smoke-load-test' limit 10
+SELECT * FROM latency WHERE testName = '<TEST_CASE_NAME>' limit 10
 ```
 
 Once the test results have been verified in InfluxDB, it's time to see the graphs in Grafana.
 
 [http://ec2-54-86-68-145.compute-1.amazonaws.com:3000](http://ec2-54-86-68-145.compute-1.amazonaws.com:3000)
 
-Log in using `admin/admin` for the username and password and open the `Load Test Results` dashboard. 
+Log in using `admin/admin` for the username/password and open the `Load Test Results` dashboard.
 Once on the dashboad, pick the test name from the drop-down list, make sure that the time-span includes the test results above.
  
 There will be a visualization of the test results, including latencies load and errors.
@@ -137,7 +137,7 @@ There will be a visualization of the test results, including latencies load and 
 
 ####Optional:
 
-Set Grafana to update every 10 seconds and show metrics from the last minute or so. Return to the console and run the tests again, 
+Set Grafana to update every 10 seconds and show metrics from the last minute or so, by clicking on the clock at the right of the nav bar at the top. Return to the console and run the tests again,
 perhaps increasing the test duration to a minute long or more.
 
 Switch back to the Grafana dashboard and watch the test results in real-time!

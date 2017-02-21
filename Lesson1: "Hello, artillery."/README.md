@@ -43,7 +43,7 @@ $ export AWS_SECRET_ACCESS_KEY=<secret-access-key>
 $ export AWS_SESSION_TOKEN=<session-token>             # this one is optional
 ```
 
-###Step 2: install serverless v1.0.3+ and the serverless-artillery node package on your machine
+###Step 2: install serverless v1.0.3+ (up to 1.16.0) and the serverless-artillery node package on your machine
 
 ####Note: if you are on a VPN and use a proxy, export your proxy to your shell
 ```sh
@@ -57,7 +57,7 @@ $ npm install -g serverless
 $ npm install -g serverless-artillery
 ```
 
-###Step 3: create a new load testing Lambda in your AWS account 
+###Step 3: create a new load testing Lambda in your AWS account (in the US East N. Virginia region)
 ```sh
 $ slsart deploy
 ```
