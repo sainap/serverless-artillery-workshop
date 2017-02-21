@@ -43,7 +43,7 @@ $ export AWS_SECRET_ACCESS_KEY=<secret-access-key>
 $ export AWS_SESSION_TOKEN=<session-token>             # this one is optional
 ```
 
-###Step 2: install serverless v1.0.3+ (up to 1.16.0) and the serverless-artillery node package on your machine
+###Step 2: install serverless v1.0.3+ and the serverless-artillery node package on your machine.  *Avoid installing a higher version of serverless than 1.16.0, until this bug is resolved:* https://github.com/serverless/serverless/issues/3253
 
 ####Note: if you are on a VPN and use a proxy, export your proxy to your shell
 ```sh
