@@ -2,7 +2,7 @@
 
 ![Serverless all the things!](Images/artillery-shooting-lambda.png)
 
-###TL;DR:
+### TL;DR:
 Serverless-artillery is a Nordstrom open-source project. It builds on artillery.io and serverless.com by using the horizontal scalability and pay-as-you-go nature of AWS Lambda to instantly and inexpensively throw arbitrary load at your services and report results to an InfluxDB time-series database (other reporting plugins are available). This capability gives you performance and load testing on every commit, early in your CICD pipeline, so performance bugs can be caught and fixed immediately.
 
 ##### !!! Important Safety Notes !!!
