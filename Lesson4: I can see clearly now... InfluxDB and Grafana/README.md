@@ -1,9 +1,9 @@
-#Lesson 4: I can see clearly now… InfluxDB and Grafana
+# Lesson 4: I can see clearly now… InfluxDB and Grafana
 Goal: Add the InfluxDB plugin and view your test results using Grafana
 
 This next step will involve adding dependencies to the package.json so that the testing Lambda can write results to InfluxDB.
 
-###Step 1: Create a custom service for your tests
+### Step 1: Create a custom service for your tests
 
 This greater level of customization allows the modification of the code which runs in AWS Lambda.
 
@@ -43,7 +43,7 @@ $ slsart invoke -s script.yml
 
 This should deploy and invoke the lambda using the local `./script.yml`.
 
-###Step 2: Add influxdb Artillery plugin
+### Step 2: Add influxdb Artillery plugin
 
 To allow the Lambda code to write to InfluxDB, the correct NPM package dependency must be added. Run the following command (no -g global flag!) in the directory just created:
 
@@ -63,7 +63,7 @@ This modifies the package.json file to include the necessary dependency. The pac
 }
 ```
 
-###Step 3: Update Script to Log to Influx Server
+### Step 3: Update Script to Log to Influx Server
 
 
 Update the `config` portion of the test script to add the `plugin` from the example below:
@@ -91,7 +91,7 @@ $ slsart invoke -s script.yml
 
 If all went correctly, the load test data was added to the InfluxDB. Next step is to query the DB.
 
-###Step 4: Query and Visualize the Results
+### Step 4: Query and Visualize the Results
 
 The database containing the results should have already been created, and is referenced in the test script under the `influx` part. 
 In this example, the database `artillery_metrics` is used.
@@ -135,7 +135,7 @@ There will be a visualization of the test results, including latencies load and 
 
 ![Load Test Dashboard](https://github.com/Nordstrom/serverless-artillery-workshop/blob/master/Images/grafana-dashboard.jpg)
 
-####Optional:
+#### Optional:
 
 Set Grafana to update every 10 seconds and show metrics from the last minute or so, by clicking on the clock at the right of the nav bar at the top. Return to the console and run the tests again,
 perhaps increasing the test duration to a minute long or more.
