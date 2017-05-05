@@ -1,14 +1,14 @@
-#Lesson 2: Aiming your artillery
+# Lesson 2: Aiming your artillery
 Goal: create a script and test your own service endpoint
 
-###Step 1: Create a simple load script with a short duration and small load (<25 TPS).
+### Step 1: Create a simple load script with a short duration and small load (<25 TPS).
 
 ```
 $ slsart script --endpoint <complete target URL here> --duration 10 --rate 5 --rampTo 15
 $ slsart invoke
 ```
 
-###Step 2: Let's take a look at the script that was created.
+### Step 2: Let's take a look at the script that was created.
 
 ```
 $ ls
