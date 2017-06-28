@@ -20,10 +20,10 @@ Setting up credentials requires you create a user aside from the root account. I
 
 Generally, it's best to create a user with the least amount of permissions possible to do what you need to do. In this case, that's a bit complicated, so this documentation provides a lazy way and a best practice way to setup a user for this workshop. 
 
-Either way, start by logging in to the console (https://aws.amazon.com/), search `IAM` into the search bar, and click on the result. Click Users -> Add user. Enter the username and give the user `Programmatic access`.
+Either way, start by logging in to the console (https://aws.amazon.com/), search `IAM` into the search bar, and click on the result. Click Users -> Add user. Enter the username and give the user `Programmatic access`. On the next page, click `Attach exisitng policies directly`. This is where the lazy and best practice methods depart.
 
 #### The Lazy Way
-On the next page, click `Attach exisitng policies directly` and then check the box next to `AdministratorAccess`. Now, your user has access to all AWS services and resources.
+and then check the box next to `AdministratorAccess`. Now, your user has access to all AWS services and resources.
 
 #### The Best Practice Way
 to be continued....
