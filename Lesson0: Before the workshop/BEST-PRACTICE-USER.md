@@ -33,4 +33,4 @@ Name the policy what you wish, though we reccomend 'ServerlessDeployment'. Below
     ]
 } 
 ```
-*NOTE: The last line of the script needs some edits. `region` should be your preferred region, (us-east-1 reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `accountID` should be the account ID of the user being granted these permissions. `accountID` is the 12 digit number in the middle of `User ARN` which can be found on the mainpage of the user (IAM->Users->User)*
+*NOTE: The last line of the script needs some edits. `region` should be your preferred region, (us-east-1 reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `accountID` should be the account ID of the user being granted these permissions. `accountID` is the 12 digit number in the middle of `User ARN` which can be found on the mainpage of the user (IAM->Users->User).*
