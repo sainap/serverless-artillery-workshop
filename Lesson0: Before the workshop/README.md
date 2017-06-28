@@ -3,9 +3,9 @@ Goal: Install everything needed for the workshop
 We advise using the native command line tools for your OS.
 
 ### Step 0: Creating an AWS account
-Go to https://aws.amazon.com/console/ and click '`Sign In to the Console`' in the upper right hand corner. When the sign in page loads, enter your email and click '`Sign in using our secure server`'.
+Go to https://aws.amazon.com/console/ and click `Sign In to the Console` in the upper right hand corner. When the sign in page loads, enter your email and click `Sign in using our secure server`.
 
-Enter your information on the next page and click '`Create account`'.
+Enter your information on the next page and click `Create account`.
 
 Next comes standard sign up information. fill out the following as you normally would:
     Contact info
@@ -24,10 +24,10 @@ Setting up credentials requires you create a user aside from the root account. I
 
 Generally, it's best to create a user with the least amount of permissions possible to do what you need to do. In this case, that's a bit complicated, so this documentation provides a lazy way and a best practice way to setup a user for this workshop. 
 
-Either way, start by logging in to the console (https://aws.amazon.com/), search '`IAM`' into the search bar, and click on the result. Click Users -> Add user. Enter the username and give the user '`Programmatic access`'.
+Either way, start by logging in to the console (https://aws.amazon.com/), search `IAM` into the search bar, and click on the result. Click Users -> Add user. Enter the username and give the user `Programmatic access`.
 
 #### The Lazy Way
-On the next page, click '`Attach exisitng policies directly`' and then check the box next to '`AdministratorAccess`'. Now, your user has access to all AWS services and resources.
+On the next page, click `Attach exisitng policies directly` and then check the box next to `AdministratorAccess`. Now, your user has access to all AWS services and resources.
 
 #### The Best Practice Way
 
