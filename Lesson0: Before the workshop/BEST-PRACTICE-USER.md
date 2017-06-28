@@ -4,33 +4,58 @@ Good for you! You are aware of the consequences of permissions and have decided 
 First, you will need to create a new policy to specify permissions for this workshop. Picking up where we left off in the README, click `Create Policy`. 
 Name the policy what you wish, though we reccomend 'ServerlessDeployment'. Below you will find a policy script that provides least permissions necessary for a user to complete this workshop. Paste this script into the `Policy Document` section:
 ```
-{  
-    "Version":"2012-10-17",
-    "Statement":[
+{
+    "Version": "2012-10-17",
+    "Statement": [
         {
-            "Effect":"Allow",
-            "Action":[
+            "Effect": "Allow",
+            "Action": [
                 "s3:CreateBucket",
                 "s3:GetBucketLocation",
                 "s3:GetObject",
                 "s3:ListBucket",
                 "s3:PutObject"
             ],
-            "Resource":"arn:aws:s3:::serverless-artillery-*"
+            "Resource": "arn:aws:s3:::serverless-artillery-*"
         },
         {
-            "Effect":"Allow",
-            "Action":[
+            "Effect": "Allow",
+            "Action": [
                 "cloudformation:CreateStack",
                 "cloudformation:UpdateStack",
                 "cloudformation:DeleteStack",
                 "cloudformation:DescribeStacks",
                 "cloudformation:DescribeStackEvents",
+                "cloudformation:DescribeStackResource",
                 "cloudformation:DescribeStackResources"
             ],
-            "Resource":"arn:aws:cloudformation:region:accountID:stack/serverless-artillery-*"
+            "Resource": "arn:aws:cloudformation:<region>:<accountID>:stack/serverless-artillery-*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:ValidateTemplate"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetRole"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:UpdateFunctionCode",
+                "lambda:ListVersionsByFunction",
+                "lambda:PublishVersion",
+                "lambda:InvokeFunction"
+            ],
+            "Resource": "arn:aws:lambda:<region>:<accountID>:function:serverless-artillery-*:*"
         }
     ]
-} 
+}
 ```
-*NOTE: The last line of the script needs some edits. `region` should be your preferred region, (us-east-1 reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `accountID` should be the account ID of the user being granted these permissions. `accountID` is the 12 digit number in the middle of `User ARN` which can be found on the mainpage of the user (IAM->Users->User).*
+*NOTE: The last line of the script needs some edits. `<region>` should be your preferred region, (us-east-1 reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `<accountID>` should be the account ID of the user being granted these permissions. `accountID` is the 12 digit number in the middle of `User ARN` which can be found on the mainpage of the user (IAM->Users->User).*
