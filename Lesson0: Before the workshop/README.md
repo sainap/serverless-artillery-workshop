@@ -26,7 +26,7 @@ Either way, start by logging in to the console (https://aws.amazon.com/), search
 and then check the box next to `AdministratorAccess`. Now, your user has access to all AWS services and resources.
 
 #### The Best Practice Way
-to be continued....
+Due to it's somewhat extensive nature, the [Best Practice method](BEST-PRACTICE-USER.md) is stored in a different file.
 
 ### Step 3: Setting up AWS credentials
 > **_NOTE: Nordstrom Technology!_**
