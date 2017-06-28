@@ -1,7 +1,7 @@
 ## Best Practice User
 Good for you! You are aware of the consequences of permissions and have decided to simultaneously decrease risk of disaster and enhance your knowledge of AWS permissions. 
 
-First, you will need to create a new policy to specify permissions for this workshop. Picking up where we left off in the README, click `create policy`. 
+First, you will need to create a new policy to specify permissions for this workshop. Picking up where we left off in the README, click `Create Policy`. 
 Name the policy what you wish, though we reccomend 'ServerlessDeployment'. Below you will find a policy script that provides least permissions necessary for a user to complete this workshop. Paste this script into the `Policy Document` section:
 ```
  Version: '2012-10-17'
@@ -24,4 +24,4 @@ Name the policy what you wish, though we reccomend 'ServerlessDeployment'. Below
         - 'cloudformation:DescribeStackResources'
       Resource: 'arn:aws:cloudformation:${region}:${accountId}:stack/serverless-artillery-*'
 ```
-*NOTE: The last line of the script needs some edits. `region` should be your preferred region, (us-east-1 reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `accountId` should be the account ID of the user being granted these permissions*
+*NOTE: The last line of the script needs some edits. `region` should be your preferred region, (us-east-1 reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `accountId` should be the account ID of the user being granted these permissions. `account Id` is the 12 digit number in the middle of `User ARN` which can be found on the mainpage of the user (IAM->Users->User)*
