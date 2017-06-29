@@ -23,7 +23,7 @@ Generally, it's best to create a user with the least amount of permissions possi
 Either way, start by logging in to the console (https://aws.amazon.com/), search `IAM` into the search bar, and click on the result. Click Users -> Add user. Enter the username and give the user `Programmatic access`. On the next page, click `Attach exisitng policies directly`. This is where the lazy and best practice methods depart.
 
 #### The Lazy Way
-and then check the box next to `AdministratorAccess`. Now, your user has access to all AWS services and resources.
+Check the box next to `AdministratorAccess`. Now, your user has access to all AWS services and resources. This is lazy (in a bad, irresponsible way, not in the cool programmer way) and dangerous, and if you have any security concerns this method should be avoided. 
 
 #### The Best Practice Way
 Due to it's somewhat extensive nature, the [Best Practice method](BEST-PRACTICE-USER.md) is stored in a different file.
