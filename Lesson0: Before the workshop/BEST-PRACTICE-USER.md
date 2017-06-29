@@ -14,7 +14,11 @@ Name the policy what you wish, though we reccomend 'ServerlessDeployment'. Below
                 "s3:GetBucketLocation",
                 "s3:GetObject",
                 "s3:ListBucket",
-                "s3:PutObject"
+                "s3:PutObject",
+                "s3:DeleteBucket",
+                "s3:DeleteObject",
+                "s3:DeleteObjectVersion",
+                "s3:PutLifeCycleConfiguration"
             ],
             "Resource": "arn:aws:s3:::serverless-artillery-*"
         },
@@ -41,9 +45,15 @@ Name the policy what you wish, though we reccomend 'ServerlessDeployment'. Below
         {
             "Effect": "Allow",
             "Action": [
-                "iam:GetRole"
+                "iam:GetRole",
+                "iam:CreateRole",
+                "iam:DeleteRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:DeleteRole",
+                "iam:CreateFunction",
+                "iam:PassRole"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:iam::<accountID>:role/serverless-artillery-*"
         },
         {
             "Effect": "Allow",
@@ -51,11 +61,25 @@ Name the policy what you wish, though we reccomend 'ServerlessDeployment'. Below
                 "lambda:UpdateFunctionCode",
                 "lambda:ListVersionsByFunction",
                 "lambda:PublishVersion",
-                "lambda:InvokeFunction"
+                "lambda:InvokeFunction",
+                "lambda:GetFunction",
+                "lambda:CreateFunction",
+                "lambda:DeleteFunction"
             ],
-            "Resource": "arn:aws:lambda:<region>:<accountID>:function:serverless-artillery-*:*"
+            "Resource": "arn:aws:lambda:<region>:<accountID>:function:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:DescribeLogGroups",
+                "logs:CreateLogGroup",
+                "logs:DeleteLogGroup"
+            ],
+            "Resource": "arn:aws:logs:<region>:<accountID>:log-group:*"
         }
     ]
 }
 ```
-*NOTE: The last line of the script needs some edits. `<region>` should be your preferred region, (us-east-1 reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `<accountID>` should be the account ID of the user being granted these permissions. `accountID` is the 12 digit number in the middle of `User ARN` which can be found on the mainpage of the user (IAM->Users->User).*
+*NOTE: Some resource lines of the script needs some edits. `<region>` should be your preferred region, (<region> reccomended, but a [list](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) of all regions is available) and `<accountID>` should be the account ID of the user being granted these permissions. `accountID` is the 12 digit number in the middle of `User ARN` which can be found on the mainpage of the user (IAM->Users->User).*
+
+For documentation on what a policy is and a general deeper understanding of what this script is doing, checkout Amazon's [Overview of IAM Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
