@@ -20,7 +20,7 @@ Setting up credentials requires you create a user aside from the root account. I
 
 Generally, it's best to create a user with the least amount of permissions possible to do what you need to do. In this case, that's a bit complicated, so this documentation provides a lazy way and a best practice way to setup a user for this workshop. 
 
-Either way, start by logging in to the console (https://aws.amazon.com/), search `IAM` into the search bar, and click on the result. Click Users -> Add user. Enter the username and give the user `Programmatic access`. On the next page, click `Attach exisitng policies directly`. This is where the lazy and best practice methods depart.
+Either way, start by logging in to the console (https://aws.amazon.com/), search `IAM` into the search bar, and click on the result. Click Users -> Add user. Enter the username and give the user `Programmatic access`. On the next page, click `Attach existing policies directly`. This is where the lazy and best practice methods depart.
 
 #### The Best Way
 Due to it's somewhat extensive nature, the [Best Way](LEAST-PERMISSIONS-USER.md) is stored in a different file.
@@ -51,6 +51,11 @@ export AWS_PROFILE=<your-profile>
 set AWS_PROFILE=<your-profile>
 ```
 
+#### Powershell
+```
+$env:AWS_PROFILE='nordstrom-federated'
+```
+
 ### Step 2: install serverless node package on your machine.
 
 Install the serverless.com deployment framework - this will make it easy to deploy serverless components to AWS.
@@ -60,5 +65,5 @@ Install the serverless.com deployment framework - this will make it easy to depl
 npm install -g serverless@1.11.0
 ```
 
-If you are on OS X and have used sudo to install libraries (and are thereby hitting permissions issues running the above, execute the following: 
+If you are on OS X and have used sudo to install libraries (and are thereby hitting permissions issues running the above, execute the following): 
 `sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}`
