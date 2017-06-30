@@ -103,8 +103,6 @@ source_profile = <base-profile>
 ```
 <base_profile> is the profile name associated with the credentials for the user you previously created (in the 3 lines above, for example, the profile name is the first line without the brackets). If you did not name your role `slsart-workshop-role`, that will be different as well.
 
-Finally, export the newly created credentials.
-`export AWS_PROFILE=<accountName>-role`
 Now, after all that hard work, you are rewarded with 
     a) insight into aws security credentials, very valuable knowledge in this day and age
     b) credentials that come with a very limited blast radius, meaning that if you make a mistake, it won't snowball into anything actually serious. Now, let's continue with the workshop.

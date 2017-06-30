@@ -39,7 +39,7 @@ Check the box next to `AdministratorAccess`. Now, your user has access to all AW
 
 
 ### Step 3: Setting up AWS credentials
-If you use any AWS profile other than the default, you'll need to provide that profile name to the environment via the `AWS_PROFILE` variable. For those who did things the Best Way, you can ignore this step as it should have been the last thing you did.
+If you use any AWS profile other than the default, you'll need to provide that profile name to the environment via the `AWS_PROFILE` variable. For those who did things the Best Way, use the profile name associated with the credentials you just made that allow the user to assume the role you created.
 
 #### OS X
 ```sh
