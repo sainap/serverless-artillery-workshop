@@ -2,8 +2,13 @@
 Good for you! You are aware of the consequences of permissions and have decided to simultaneously decrease risk of disaster and enhance your knowledge of AWS permissions. 
 
 Something to understand about AWS is the differentiation of users, roles, and policies. A user is something that can be verified, it has authentication. Policies and roles, on the other hand, provide authorization of certain activities within the scope of all things AWS. A role can be temporarily assumed by a user, and a policy can be attached to a user. A certain role can also carry several policies, and several policies can be attached to a user as well. 
+
 Right now, you will create a role that is to be assumed by the user you have created. This role will allow the user that assumes it the least permissions needed to complete this workshop without any problems. 
-To create a new role, log into the AWS console and navigate to IAM->roles->Create new role->Role for cross-account access. Select `Provide access between AWS accounts you own`. Enter the account ID of the account you are using for this workshop on the next page (Do not require MFA). At step 3, do nothing and click next step. At step 4, name the role something easy to remember and associate with this workshop, perhaps `slsart-workshop-role`. Create the role, then select it from the roles page you will be automatically navigated to.
+
+To create a new role, log into the AWS console and navigate to IAM->roles->Create new role->Role for cross-account access. Select `Provide access between AWS accounts you own`. Enter the account ID of the account you are using for this workshop on the next page (Do not require MFA). 
+
+At step 3, do nothing and click next step. At step 4, name the role something easy to remember and associate with this workshop, perhaps `slsart-workshop-role`. Create the role, then select it from the roles page you will be automatically navigated to.
+
 In the Permissions tab, click `Inline Policies` and create one. The policy should be a custom policy. Name is something easy, like `slsart-workshop-policy` and paste in the script below:
 
 ```
