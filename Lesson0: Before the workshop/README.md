@@ -1,6 +1,15 @@
 Goal: Install everything needed for the workshop
 
 We advise using the native command line tools for your OS.
+> **_NOTE: Nordstrom Technology!_**
+>
+> If you are a _Nordstrom_ engineer, please ignore this step and instead see the page titled _`Serverless Workshop - Nordstrom Technology Setup`_ in **Confluence** and follow the instructions there.
+Install the [AWS-CLI](SETUP-AWS-CLI.md) and use the `aws configure` command to setup your credentials.
+
+Your credentials are located in the AWS Console under:
+
+IAM --> users --> select your user ID --> security credentials tab
+
 
 ### Step 1: Creating an AWS account
 Go to https://aws.amazon.com/console/ and click `Sign In to the Console` in the upper right hand corner. When the sign in page loads, enter your email and click `Sign in using our secure server`.
@@ -30,16 +39,7 @@ Check the box next to `AdministratorAccess`. Now, your user has access to all AW
 
 
 ### Step 3: Setting up AWS credentials
-> **_NOTE: Nordstrom Technology!_**
->
-> If you are a _Nordstrom_ engineer, please ignore this step and instead see the page titled _`Serverless Workshop - Nordstrom Technology Setup`_ in **Confluence** and follow the instructions there.
-Install the [AWS-CLI](SETUP-AWS-CLI.md) and use the `aws configure` command to setup your credentials.
-
-Your credentials are located in the AWS Console under:
-
-IAM --> users --> select your user ID --> security credentials tab
-
-If you use any AWS profile other than the default, you'll need to provide that profile name to the environment via the `AWS_PROFILE` variable:
+If you use any AWS profile other than the default, you'll need to provide that profile name to the environment via the `AWS_PROFILE` variable. For those who did things the Best Way, you can ignore this step as it should have been the last thing you did.
 
 #### OS X
 ```sh
@@ -56,7 +56,7 @@ set AWS_PROFILE=<your-profile>
 $env:AWS_PROFILE='nordstrom-federated'
 ```
 
-### Step 2: install serverless node package on your machine.
+### Step 4: install serverless node package on your machine.
 
 Install the serverless.com deployment framework - this will make it easy to deploy serverless components to AWS.
 
