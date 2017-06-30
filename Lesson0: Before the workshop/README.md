@@ -4,7 +4,7 @@ We advise using the native command line tools for your OS.
 > **_NOTE: Nordstrom Technology!_**
 >
 > If you are a _Nordstrom_ engineer, please ignore this step and instead see the page titled _`Serverless Workshop - Nordstrom Technology Setup`_ in **Confluence** and follow the instructions there.
-Install the [AWS-CLI](SETUP-AWS-CLI.md) and use the `aws configure` command to setup your credentials.
+Install the [AWS-CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and use the `aws configure` command to setup your credentials.
 
 Your credentials are located in the AWS Console under:
 
