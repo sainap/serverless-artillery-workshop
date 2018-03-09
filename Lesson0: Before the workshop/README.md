@@ -4,6 +4,7 @@ We advise using the native command line tools for your OS.
 > **_NOTE: Nordstrom Technology!_**
 >
 > If you are a _Nordstrom_ engineer, please ignore this step and instead see the page titled _`Serverless Workshop - Nordstrom Technology Setup`_ in **Confluence** and follow the instructions there.
+
 Install the [AWS-CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and use the `aws configure` command to setup your credentials.
 
 Your credentials are located in the AWS Console under:
@@ -60,10 +61,10 @@ $env:AWS_PROFILE='nordstrom-federated'
 
 Install the serverless.com deployment framework - this will make it easy to deploy serverless components to AWS.
 
-#### OS X or Windows
+#### OS X or Windows (known compatible 1.11.0)
 ```sh
-npm install -g serverless@1.11.0
+npm install -g serverless
 ```
 
-If you are on OS X and have used sudo to install libraries (and are thereby hitting permissions issues running the above, execute the following): 
+If you are on *OS X* and have used sudo to install libraries (and are thereby hitting permissions issues running the above, execute the following):
 `sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}`
