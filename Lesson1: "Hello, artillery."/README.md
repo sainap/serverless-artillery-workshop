@@ -7,6 +7,13 @@ We assume you have [Node.js](https://nodejs.org/en/) (v4 or better) installed.
 ### Step 1: serverless-artillery requires AWS credentials
 
 #### Option 1:
+You may already have these credentials on your machine using the AWS SDK, aws init, or some corporate utility.
+
+```sh
+$ export AWS_PROFILE=your-preexisting-profile
+```
+
+#### Option 2:
 Go to AWS IAM console --> users --> select your user ID --> security credentials tab
 Select: Create Access Key
 Download credentials csv file
@@ -27,13 +34,6 @@ From your terminal:
 $ export AWS_PROFILE=my-profile
 ```
 
-#### Option 2:
-You may already have these credentials on your machine using the AWS SDK, aws init, or some corporate utility.
-
-```sh
-$ export AWS_PROFILE=your-preexisting-profile
-```
-
 #### Option 3:
 Grab your credentials from a script, tool, or whatevs and add them to the environment.
 
@@ -43,7 +43,7 @@ $ export AWS_SECRET_ACCESS_KEY=<secret-access-key>
 $ export AWS_SESSION_TOKEN=<session-token>             # this one is optional
 ```
 
-### Step 2: install serverless v1.0.3+ and the serverless-artillery node package on your machine.  *Avoid installing a higher version of serverless than 1.16.0, until this bug is resolved:* https://github.com/serverless/serverless/issues/3253
+### Step 2: install serverless v1.0.3+ and the serverless-artillery node package on your machine.
 
 #### Note: if you are on a VPN and use a proxy, export your proxy to your shell
 ```sh
@@ -52,9 +52,13 @@ export proxy=https://your.proxy.com:1234
 
 Regardless, install the the things
 ```sh
-$ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share} # this is for those of you who have corrupted your file system
 $ npm install -g serverless
 $ npm install -g serverless-artillery
+```
+
+If you are on *OS X* and have used sudo to install libraries (and are thereby hitting permissions issues running the above, execute the following):
+```
+$ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share} # this is for those of you who have corrupted your file system
 ```
 
 ### Step 3: create a new load testing Lambda in your AWS account (in the US East N. Virginia region)
