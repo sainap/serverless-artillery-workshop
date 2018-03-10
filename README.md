@@ -12,8 +12,7 @@ Serverless-artillery is a Nordstrom open-source project. It builds on artillery.
 * AWS generally likes to know if you're launching a significant load test. They will also warm stuff up for you, which reduces throttling errors early in the test, meaning you don't have to throw as much data away.
 
 
-## Come and see serverless-artillery in action on October 26th!
-At the Serverless Conference London, we are co-hosting a workshop on Wednesday with the Serverless Framework team.  First, the Serverless Framework team will walk developers through deploying a sample serverless architecture using the new Serverless Framework v1.0.  We (Nordstrom tech) will follow this up by testing the resulting RESTful endpoints with the serverless-artillery toolset.
+## Learn how to...
 * install and run serverless-artillery against a sample endpoint
 * customize your load script and target your own service
 * use cloudwatch to understand the impact of this load
