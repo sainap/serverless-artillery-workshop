@@ -2,7 +2,7 @@
 Goal: Deploy and run a simple load test against a public endpoint.
 
 ### Prerequisites
-We assume you have [Node.js](https://nodejs.org/en/) (v4 or better) installed.
+We assume you have [Node.js](https://nodejs.org/en/) (v6 or better) installed.
 
 ### Step 1: serverless-artillery requires AWS credentials
 
