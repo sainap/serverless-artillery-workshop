@@ -1,4 +1,4 @@
-# Lesson 7: Load Testing Services in a VPC
+# Lesson 8: Load Testing Services in a VPC
 Goal: create a script to test a service in a VPC by giving lambda a static IP address and whitelisting that IP address.
 
 ### Step 1: Create a VPC
@@ -9,7 +9,7 @@ Nordstrom developers should contact Public Cloud to request a new VPC.
 [Create an Internet Gateway to get access to the internet from your VPC.](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html)
 
 ### Step 3: Create a Public Subet
-[Create a a Public Subnet .](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html)
+[Create a a Public Subnet.](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html)
 
 ### Step 4: Create an Elastic IP Address
 This will be the IP address of your lambda.
